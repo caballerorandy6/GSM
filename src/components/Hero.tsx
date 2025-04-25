@@ -1,141 +1,35 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
-import { Dialog, DialogPanel } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import { navigation } from "@/libs/data";
 import { useGSMStore } from "@/store/gsmactx-store";
-import { useInView } from "react-intersection-observer";
+import useSectionObserver from "@/hooks/useSectionObserver";
+import Header from "@/components/Header";
 
 export default function Hero() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { activeSection, setActiveSection } = useGSMStore();
-
-  const { ref, inView } = useInView({
-    threshold: 0.75,
-  });
+  const { setScrolled } = useGSMStore();
 
   useEffect(() => {
-    if (inView) {
-      setActiveSection("Home");
-    }
-  }, [inView, activeSection, setActiveSection]);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [setScrolled]);
+
+  const ref = useSectionObserver({ sectionName: "Home" });
 
   return (
     <section id="home" ref={ref} className="bg-gray-900">
-      <header className="absolute inset-x-0 top-0 z-50">
-        <nav
-          aria-label="Global"
-          className="flex items-center justify-between p-6 lg:px-8"
-        >
-          <div className="flex lg:flex-1">
-            <Link href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <Image
-                alt=""
-                width={1000}
-                height={1000}
-                src="/logo.webp"
-                className="h-20 w-auto"
-              />
-            </Link>
-          </div>
-          <div className="flex lg:hidden">
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(true)}
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200"
-            >
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon aria-hidden="true" className="size-10" />
-            </button>
-          </div>
-          <div className="hidden lg:flex lg:gap-x-12">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-sm/6 font-semibold text-white"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-2 text-sm/6 font-semibold text-white">
-            <Link
-              href="tel:+12812354684"
-              passHref
-              className="flex justify-center items-center gap-2 text-white text-sm/6 transition-colors rounded-md bg-indigo-500 px-3.5 py-2.5 font-semibold shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400
-"
-            >
-              <span>Call Now!</span>
-              <PhoneIcon className="text-white w-4 h-4" />
-            </Link>
-          </div>
-        </nav>
-        <Dialog
-          open={mobileMenuOpen}
-          onClose={setMobileMenuOpen}
-          className="lg:hidden"
-        >
-          <div className="fixed inset-0 z-50" />
-          <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
-            <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
-                <span className="sr-only">Your Company</span>
-                <Image
-                  width={1000}
-                  height={1000}
-                  alt=""
-                  src="/logo.webp"
-                  className="h-16 w-auto"
-                />
-              </a>
-              <button
-                type="button"
-                onClick={() => setMobileMenuOpen(false)}
-                className="-m-2.5 rounded-md p-2.5 text-gray-400"
-              >
-                <span className="sr-only">Close menu</span>
-                <XMarkIcon aria-hidden="true" className="size-6" />
-              </button>
-            </div>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/25">
-                <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-gray-800"
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-                <div className="py-6">
-                  <Link
-                    href="tel:+12812354684"
-                    passHref
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-gray-800"
-                  >
-                    Call Us
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </DialogPanel>
-        </Dialog>
-      </header>
-
+      <Header />
       <div className="relative isolate overflow-hidden pt-14">
         <Image
           priority
           width={1000}
           height={1000}
-          alt=""
+          alt="GSM AC Background"
           src="/home.webp"
           className="absolute inset-0 -z-10 size-full object-cover object-center"
         />
@@ -170,7 +64,7 @@ export default function Hero() {
               <h1 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">
                 GSM A/C General & Contractor Inc
               </h1>
-              <p className="mt-8 text-lg font-medium text-pretty text-gray-200 sm:text-xl/8">
+              <p className="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">
                 Special Spring A/C Check Up For $79.99″ Regular Check Up Is
                 $99.99
                 <br />
@@ -181,7 +75,7 @@ export default function Hero() {
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <Link
                   href="/#contact"
-                  className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                  className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 transition-colors"
                 >
                   Get a free estimate
                 </Link>

@@ -1,30 +1,52 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+p {
+  max-width: 75ch;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.nav-blur {
+  animation: blur linear both;
+  animation-timeline: scroll();
+  animation-range: 0 500px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes blur {
+  to {
+    /* Removido el brillo claro de box-shadow */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6); /* sombra oscura y suave */
+
+    /* Azul oscuro sólido con menos transparencia */
+    background: rgba(10, 15, 26, 0.5);
+
+    /* Efecto glass con blur */
+    backdrop-filter: blur(10px);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.custom-blue {
+  background-color: #0a0f1a;
 }
 
-p {
-  max-width: 75ch;
+.custom-scrollbar {
+  scrollbar-color: blue #0a0f1a;
+}
+
+.custom-scrollbar {
+  scrollbar-color: blue #0a0f1a; /* Firefox */
+}
+
+/* WebKit browsers (Chrome, Safari, Edge) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.custom-scrollbar:-webkit-scrollbar-track {
+  background: #0a0f1a;
+}
+
+.custom-scrollbar:-webkit-scrollbar-thumb {
+  background-color: blue;
+  border-radius: 9999px; /* Fully rounded */
+  border: 3px solid #0a0f1a;
 }

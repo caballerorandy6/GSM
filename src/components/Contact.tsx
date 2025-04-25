@@ -1,9 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
-import { useGSMStore } from "@/store/gsmactx-store";
+import useSectionObserver from "@/hooks/useSectionObserver";
 import {
   BuildingOffice2Icon,
   EnvelopeIcon,
@@ -11,17 +9,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 export default function Contact() {
-  const { setActiveSection } = useGSMStore();
-
-  const { ref, inView } = useInView({
-    threshold: 0.75,
-  });
-
-  useEffect(() => {
-    if (inView) {
-      setActiveSection("Contact");
-    }
-  }, [inView, setActiveSection]);
+  const ref = useSectionObserver({ sectionName: "Contact" });
 
   return (
     <section id="contact" ref={ref} className="relative isolate bg-gray-900">
@@ -75,7 +63,7 @@ export default function Contact() {
             <h2 className="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">
               Get in touch
             </h2>
-            <p className="mt-6 text-lg/8 text-gray-300">
+            <p className="mt-6 text-lg/8 text-gray-300 font-semibold">
               Call now to schedule an appointment. At G S M A/C & General
               Contractor INC., we take pride in offering quality HVAC services
               suitable for residential and commercial projects. We can install
@@ -231,7 +219,7 @@ export default function Contact() {
             <div className="mt-8 flex justify-end">
               <button
                 type="submit"
-                className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                className="rounded-md cursor-pointer bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 transition-colors"
               >
                 Send message
               </button>

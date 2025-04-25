@@ -18,6 +18,12 @@ interface RCWebState {
   isOpenLetsContactDialog: boolean;
   setOpenLetsContactDialog: (open: boolean) => void;
   handleClickLetsContactDialog: () => void;
+  hash: string;
+  setHash: (hash: string) => void;
+  scrolled: boolean;
+  setScrolled: (scrolled: boolean) => void;
+  mobileMenuOpen: boolean;
+  setMobileMenuOpen: (open: boolean) => void;
 }
 
 export const useGSMStore = create<RCWebState>()(
@@ -41,6 +47,12 @@ export const useGSMStore = create<RCWebState>()(
         set((state) => ({
           isOpenLetsContactDialog: !state.isOpenLetsContactDialog,
         })),
+      hash: "",
+      setHash: (hash) => set({ hash }),
+      scrolled: false,
+      setScrolled: (scrolled) => set({ scrolled }),
+      mobileMenuOpen: false,
+      setMobileMenuOpen: (open) => set({ mobileMenuOpen: open }),
     }),
     {
       name: "gsmactx-storage",
