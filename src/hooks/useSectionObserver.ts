@@ -6,11 +6,13 @@ interface UseSectionObserverProps {
   sectionName: string;
 }
 
-export default function useSectionObserver({sectionName}: UseSectionObserverProps) {
+export default function useSectionObserver({
+  sectionName,
+}: UseSectionObserverProps) {
   const { setActiveSection } = useGSMStore();
 
   const { ref, inView } = useInView({
-    threshold: 0.75,
+    threshold: 0.4,
   });
 
   useEffect(() => {

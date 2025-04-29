@@ -17,7 +17,7 @@ const ServiceCard = ({
   return (
     <div className="flex p-px lg:col-span-2">
       <div className="overflow-hidden rounded-lg bg-gray-800 ring-1 ring-white/15 lg:rounded-tl-[2rem]">
-        <div className="relative h-80">
+        <div className="relative h-80  transition-transform duration-300 hover:scale-110">
           <Image
             width={1000}
             height={1000}
@@ -31,7 +31,7 @@ const ServiceCard = ({
         <div className="p-10">
           <Link
             href="/all-services"
-            className="text-sm/4 font-semibold text-gray-400"
+            className="text-sm/4 font-semibold text-gray-200 hover:text-indigo-300 transition-colors"
           >
             {link}
           </Link>

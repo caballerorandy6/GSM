@@ -77,3 +77,21 @@ export const services = [
     src: "/service6.webp",
   },
 ];
+
+export const features = [
+  {
+    name: "Capable Specialists",
+    description:
+      "At G S M A/C & General Contractor INC., we use innovative techniques and state-of-the-art equipment to correctly carry out labor-intensive and time-sensitive cooling and heating projects. We can install ACs, heating units, and HVACs on any make and model, and give our customers the tools they need to keep their properties at a comfortable and cozy temperature all year long. We never use one-size-fits-all solutions because we are completely aware that each job is unique. Choosing our heating repair services and other options is choosing to partner with competent professionals.",
+  },
+  {
+    name: "Superior Customer Service Since 2005",
+    description:
+      "Many homeowners and businesses in Cypress, TX have made us their go-to company because we offer quality HVAC services. Our experienced and well-trained technicians will help with the selection of your system by explaining the advantages and disadvantages of your available options. They will provide you with the details you need to make an educated decision suitable for your needs and budget. Once you have made your choice, they will handle the installation work and make sure your unit is working at optimal efficiency. Let us make things easier for you.",
+  },
+  {
+    name: "Call us at (281) 235-4684 to take advantage of our impeccable heating repair services!",
+    description:
+      "Book our affordable AC replacement services and other options by calling us now. Our phone operators will gladly answer your questions. You can find our number on our homepage. Let us know how we can help you!",
+  },
+];

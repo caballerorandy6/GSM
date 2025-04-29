@@ -1,6 +1,7 @@
 import { services } from "@/libs/data";
 import ServiceCard from "@/components/ServiceCard";
 import useSectionObserver from "@/hooks/useSectionObserver";
+import { features } from "@/libs/data";
 
 export default function Services() {
   const ref = useSectionObserver({ sectionName: "Services" });
@@ -20,6 +21,18 @@ export default function Services() {
               imageUrl={service.src}
               link={service.link}
             />
+          ))}
+        </div>
+        <div className="mt-10 max-w-xl space-y-8 text-base/7 lg:max-w-none">
+          {features.map((feature) => (
+            <div key={feature.name} className="relative flex flex-col">
+              <p className="text-2xl font-semibold tracking-tight text-pretty text-white">
+                {feature.name}
+              </p>{" "}
+              <dd className="mt-6 text-base/7 text-gray-300">
+                {feature.description}
+              </dd>
+            </div>
           ))}
         </div>
       </div>

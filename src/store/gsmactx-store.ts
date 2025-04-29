@@ -1,30 +1,6 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import { navigation } from "@/libs/data";
-
-type SectionName = (typeof navigation)[number]["name"];
-
-interface RCWebState {
-  activeSection: SectionName;
-  setActiveSection: (section: SectionName) => void;
-  timeOfLastClick: number;
-  setTimeOfLastClick: (time: number) => void;
-  isOpen: boolean;
-  setIsOpen: (open: boolean) => void;
-  handleClickModal: () => void;
-  isOpenProjectsDialog: boolean;
-  setIsOpenProjectsDialog: (open: boolean) => void;
-  handleClickProjectsDialog: () => void;
-  isOpenLetsContactDialog: boolean;
-  setOpenLetsContactDialog: (open: boolean) => void;
-  handleClickLetsContactDialog: () => void;
-  hash: string;
-  setHash: (hash: string) => void;
-  scrolled: boolean;
-  setScrolled: (scrolled: boolean) => void;
-  mobileMenuOpen: boolean;
-  setMobileMenuOpen: (open: boolean) => void;
-}
+import { RCWebState } from "@/libs/interfaces";
 
 export const useGSMStore = create<RCWebState>()(
   persist(
