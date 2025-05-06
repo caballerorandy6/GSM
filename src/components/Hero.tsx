@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useGSMStore } from "@/store/gsmactx-store";
 import useSectionObserver from "@/hooks/useSectionObserver";
-import Header from "@/components/Header";
+import Header from "./Header";
 
 export default function Hero() {
   const { setScrolled } = useGSMStore();

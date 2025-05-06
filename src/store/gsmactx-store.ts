@@ -29,6 +29,10 @@ export const useGSMStore = create<RCWebState>()(
       setScrolled: (scrolled) => set({ scrolled }),
       mobileMenuOpen: false,
       setMobileMenuOpen: (open) => set({ mobileMenuOpen: open }),
+      showHeader: false,
+      showFooter: false,
+      setShowHeader: (show) => set({ showHeader: show }),
+      setShowFooter: (show) => set({ showFooter: show }),
     }),
     {
       name: "gsmactx-storage",

@@ -29,16 +29,16 @@ const ServiceCard = ({
           <div className="absolute inset-0 bg-black/10" /> {/* Sombra suave */}
         </div>
         <div className="p-10">
+          <h2 className="text-2xl font-semibold tracking-tight text-pretty text-white">
+            {title}
+          </h2>
+          <p className="mt-6 text-base/7 text-gray-300">{description}</p>
           <Link
-            href="/all-services"
-            className="text-sm/4 font-semibold text-gray-200 hover:text-indigo-300 transition-colors"
+            href="/services"
+            className="text-sm/4 font-semibold text-blue-400 hover:text-indigo-300 transition-colors"
           >
             {link}
           </Link>
-          <p className="mt-2 text-lg font-medium tracking-tight text-white">
-            {title}
-          </p>
-          <p className="mt-2 max-w-lg text-sm/6 text-gray-400">{description}</p>
         </div>
       </div>
     </div>

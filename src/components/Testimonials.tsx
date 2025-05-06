@@ -10,7 +10,7 @@ const Testimonials = () => {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.5; // Adjust the playback rate
+      videoRef.current.playbackRate = 1; // if you want to set a specific playback rate am just setting it to any value
     }
   }, []);
 
@@ -53,7 +53,30 @@ const Testimonials = () => {
       </p>
 
       <GSMSlider reviews={testimonials} />
-      <div className="flex justify-center items-center rounded-r-4xl">
+      <div className="flex flex-col xl:flex-row justify-between gap-8 items-center rounded-r-4xl">
+        <div className="xl:w-1/2">
+          <h2 className="text-2xl font-semibold tracking-tight text-pretty text-white">
+            Committed to Excellence: Our Clients&apos; Satisfaction Speaks for
+            Itself
+          </h2>
+          <p className="mt-6 text-base/7 text-gray-300">
+            At G S M A/C & General Contractor INC., we don’t just specialize in
+            HVAC installation and repair — we build long-lasting relationships
+            based on trust, transparency, and quality workmanship. Since day
+            one, our mission has been to deliver exceptional service that goes
+            beyond the technical: we listen, advise, and ensure each client
+            receives exactly what they need. Thanks to our dedication to detail
+            and excellence, we’ve earned the loyalty of hundreds of families and
+            businesses who rely on us as their trusted HVAC service provider.
+            Every project is an opportunity to exceed expectations, and we prove
+            it through consistent results and customer care that truly stands
+            out. Our clients’ satisfaction isn’t just a promise — it’s our
+            reputation. Positive reviews, referrals, and returning customers
+            reflect the real impact of our work. At G S M A/C, your comfort and
+            peace of mind are our top priorities, and we work every day to live
+            up to that commitment.
+          </p>
+        </div>
         <video
           ref={videoRef}
           autoPlay
@@ -61,7 +84,7 @@ const Testimonials = () => {
           muted
           controls
           src="/video.webm"
-          className="inset-0 size-fit object-cover mt-20"
+          className="inset-0 size-fit object-cover mt-20 saturate-200 xl:w-1/2"
         />
       </div>
     </section>

@@ -1,29 +1,29 @@
 import Image from "next/image";
-import { heating_repair } from "@/libs/data";
+import { attic_insulation } from "@/libs/data";
 
-const HeatingRepair = () => {
+const AtticInsullation = () => {
   return (
     <section
-      id="heating-repair"
+      id="attic-insulation"
       className="overflow-hidden bg-white pb-24 sm:pb-32 custom-blue"
     >
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
         <h2 className="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl text-center ">
-          Heating Repair Company That You Can Trust!
+          Attic Insulation!
         </h2>
         <div className="relative h-80 transition-transform duration-300 hover:scale-105 my-10">
           <Image
             width={560}
             height={560}
             alt="GSM AC Personal"
-            src="/service4.webp"
+            src="/service6.webp"
             className="block size-full object-cover"
             priority={false}
           />
           <div className="absolute inset-0 bg-black/20" />
         </div>
         <div className="mt-10 max-w-xl space-y-8 text-base/7 lg:max-w-none">
-          {heating_repair.map((item, index) => (
+          {attic_insulation.map((item, index) => (
             <div key={index} className="relative flex flex-col">
               <p className="text-2xl font-semibold tracking-tight text-pretty text-white">
                 {item.name}
@@ -39,4 +39,4 @@ const HeatingRepair = () => {
   );
 };
 
-export default HeatingRepair;
+export default AtticInsullation;

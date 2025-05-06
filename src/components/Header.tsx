@@ -43,7 +43,7 @@ const Header = () => {
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200"
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon aria-hidden="true" className="size-10" />
+            <Bars3Icon aria-hidden="true" className="size-10 cursor-pointer" />
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
@@ -96,7 +96,7 @@ const Header = () => {
               className="-m-2.5 rounded-md p-2.5 text-gray-400"
             >
               <span className="sr-only">Close menu</span>
-              <XMarkIcon aria-hidden="true" className="size-6" />
+              <XMarkIcon aria-hidden="true" className="size-6 cursor-pointer" />
             </button>
           </div>
           <div className="mt-6 flow-root text-white">
@@ -109,6 +109,7 @@ const Header = () => {
                     className={clsx("font-semibold transition-colors", {
                       "text-indigo-300": activeSection === item.name,
                     })}
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
                   </Link>

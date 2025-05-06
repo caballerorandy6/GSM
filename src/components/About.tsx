@@ -1,7 +1,6 @@
 import Image from "next/image";
 import useSectionObserver from "@/hooks/useSectionObserver";
 
-
 const About = () => {
   const ref = useSectionObserver({ sectionName: "About" });
 
@@ -16,7 +15,7 @@ const About = () => {
           <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">
             About Our HVAC Repair & Installation Company
           </h1>
-          <p className="mt-6 text-xl/8 text-balance text-gray-300">
+          <p className="mt-6 text-base/7 text-gray-300">
             We established our HVAC repair & installation company in 2005 and
             since then, G S M A/C & General Contractor INC. has become a
             reference for quality, professionalism, and competence. Over the

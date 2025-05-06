@@ -20,6 +20,10 @@ export interface RCWebState {
   setScrolled: (scrolled: boolean) => void;
   mobileMenuOpen: boolean;
   setMobileMenuOpen: (open: boolean) => void;
+  showHeader: boolean;
+  showFooter: boolean;
+  setShowHeader: (show: boolean) => void;
+  setShowFooter: (show: boolean) => void;
 }
 
 export interface GooglePlacesReview {

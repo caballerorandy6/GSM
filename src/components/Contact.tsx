@@ -1,15 +1,43 @@
 "use client";
 
 import Link from "next/link";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { UserFormData, UserSchema } from "@/libs/zod";
+import { ErrorMessage } from "@hookform/error-message";
 import useSectionObserver from "@/hooks/useSectionObserver";
 import {
   BuildingOffice2Icon,
   EnvelopeIcon,
   PhoneIcon,
 } from "@heroicons/react/24/outline";
+import { toast } from "sonner";
+import Footer from "@/components/Footer";
 
 export default function Contact() {
   const ref = useSectionObserver({ sectionName: "Contact" });
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<UserFormData>({
+    resolver: zodResolver(UserSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      message: "",
+    },
+  });
+
+  const onSubmit = async (data: UserFormData) => {
+    console.log("Form submitted:", data);
+    toast.success("Message sent successfully!");
+    reset();
+  };
 
   return (
     <section id="contact" ref={ref} className="relative isolate bg-gray-900">
@@ -63,7 +91,7 @@ export default function Contact() {
             <h2 className="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">
               Get in touch
             </h2>
-            <p className="mt-6 text-lg/8 text-gray-300 font-semibold">
+            <p className="mt-6 text-base/7 text-gray-300">
               Call now to schedule an appointment. At G S M A/C & General
               Contractor INC., we take pride in offering quality HVAC services
               suitable for residential and commercial projects. We can install
@@ -112,20 +140,19 @@ export default function Contact() {
                   />
                 </dt>
                 <dd>
-                  <a
-                    href="mailto:hello@example.com"
+                  <Link
+                    href="mailto:contactus@gsmactx.com"
                     className="hover:text-white"
                   >
-                    hello@example.com
-                  </a>
+                    contactus@gsmactx.com
+                  </Link>
                 </dd>
               </div>
             </dl>
           </div>
         </div>
         <form
-          action="#"
-          method="POST"
+          onSubmit={handleSubmit(onSubmit)}
           className="px-6 pt-20 pb-24 sm:pb-32 lg:px-8 lg:py-48"
         >
           <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
@@ -139,11 +166,19 @@ export default function Contact() {
                 </label>
                 <div className="mt-2.5">
                   <input
-                    id="first-name"
-                    name="first-name"
+                    {...register("firstName")}
+                    id="firstName"
+                    name="firstName"
                     type="text"
                     autoComplete="given-name"
                     className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
+                  />
+                  <ErrorMessage
+                    errors={errors}
+                    name="firstName"
+                    render={({ message }) => (
+                      <p className="text-red-500 text-sm mt-1">{message}</p>
+                    )}
                   />
                 </div>
               </div>
@@ -156,11 +191,19 @@ export default function Contact() {
                 </label>
                 <div className="mt-2.5">
                   <input
-                    id="last-name"
-                    name="last-name"
+                    {...register("lastName")}
+                    id="lastName"
+                    name="lastName"
                     type="text"
                     autoComplete="family-name"
                     className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
+                  />
+                  <ErrorMessage
+                    errors={errors}
+                    name="lastName"
+                    render={({ message }) => (
+                      <p className="text-red-500 text-sm mt-1">{message}</p>
+                    )}
                   />
                 </div>
               </div>
@@ -173,11 +216,19 @@ export default function Contact() {
                 </label>
                 <div className="mt-2.5">
                   <input
+                    {...register("email")}
                     id="email"
                     name="email"
                     type="email"
                     autoComplete="email"
                     className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
+                  />
+                  <ErrorMessage
+                    errors={errors}
+                    name="email"
+                    render={({ message }) => (
+                      <p className="text-red-500 text-sm mt-1">{message}</p>
+                    )}
                   />
                 </div>
               </div>
@@ -190,11 +241,19 @@ export default function Contact() {
                 </label>
                 <div className="mt-2.5">
                   <input
-                    id="phone-number"
-                    name="phone-number"
+                    {...register("phone")}
+                    id="phone"
+                    name="phone"
                     type="tel"
                     autoComplete="tel"
                     className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
+                  />
+                  <ErrorMessage
+                    errors={errors}
+                    name="phone"
+                    render={({ message }) => (
+                      <p className="text-red-500 text-sm mt-1">{message}</p>
+                    )}
                   />
                 </div>
               </div>
@@ -207,6 +266,7 @@ export default function Contact() {
                 </label>
                 <div className="mt-2.5">
                   <textarea
+                    {...register("message")}
                     id="message"
                     name="message"
                     rows={4}
@@ -227,6 +287,7 @@ export default function Contact() {
           </div>
         </form>
       </div>
+      <Footer />
     </section>
   );
 }

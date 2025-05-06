@@ -7,7 +7,7 @@ p {
 .nav-blur {
   animation: blur linear both;
   animation-timeline: scroll();
-  animation-range: 0 500px;
+  animation-range: 0 1000px;
 }
 
 @keyframes blur {

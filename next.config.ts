@@ -1,13 +1,30 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
-    domains: [
-      "images.unsplash.com",
-      "lh3.googleusercontent.com",
-      "maps.googleapis.com",
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+        pathname: "/photo/**", // Más específico: solo fotos
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        port: "",
+        pathname: "/profile/picture/**",
+      },
+      {
+        protocol: "https",
+        hostname: "maps.googleapis.com",
+        port: "",
+        pathname: "/maps/api/place/photo/**",
+      },
+      // ... otros dominios seguros
     ],
   },
+  // ... otras configuraciones de Next.js
 };
 
-export default nextConfig;
+module.exports = nextConfig;
