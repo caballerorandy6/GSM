@@ -1,37 +1,55 @@
-"use client";
-
-import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 import { allServices } from "@/libs/data";
-import { useMemo } from "react";
-import Spinner from "@/components/Spinner";
 
-interface Props {
-  id: string;
+// Importing all service components
+import AirConditioningInstallation from "./air-conditioning-installation";
+import AirConditioningRepair from "./air-conditioning-repair";
+import AirDuctSanitizing from "./air-duct-sanitizing";
+import AtticInsullation from "./attic-insullation";
+import HeatingInstallation from "./heating-installation";
+import HeatingRepair from "./HeatingRepair";
+
+// Mapping service IDs to their respective components
+const componentMap: Record<string, React.ComponentType> = {
+  "air-conditioning-installation": AirConditioningInstallation,
+  "air-conditioning-repair": AirConditioningRepair,
+  "air-duct-sanitizing": AirDuctSanitizing,
+  "attic-insullation": AtticInsullation,
+  "heating-installation": HeatingInstallation,
+  "heating-repair": HeatingRepair,
+};
+
+// Type for the params object
+type Params = Promise<{ id: string }>;
+
+// Function to generate static parameters for all services
+export async function generateStaticParams() {
+  return allServices.map((service) => ({
+    id: service.id,
+  }));
 }
 
-export default function ServiceClient({ id }: Props) {
-  const service = useMemo(() => allServices.find((s) => s.id === id), [id]);
+// Function to generate metadata for the service page
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  const service = allServices.find((s) => s.id === params.id);
+  if (!service) return {};
+
+  return {
+    title: service.name,
+  };
+}
+
+export default async function ServiceClient({ params }: { params: Params }) {
+  const { id } = await params;
+  const service = allServices.find((s) => s.id === id);
 
   if (!service) {
     notFound();
+    return null;
   }
 
-  const ServiceComponent = useMemo(
-    () =>
-      dynamic(
-        () =>
-          import(`@/components/${service.id}`).catch(() => {
-            notFound();
-            return Promise.resolve(() => null);
-          }),
-        {
-          loading: () => <Spinner />,
-          ssr: false,
-        }
-      ),
-    [service.id]
-  );
+  const ServiceComponent = componentMap[service.id];
+  if (!ServiceComponent) notFound();
 
   return (
     <div className="p-8">
