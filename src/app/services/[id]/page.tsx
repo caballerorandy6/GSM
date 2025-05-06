@@ -6,7 +6,7 @@ interface Props {
   };
 }
 
-export default async function ServicePage({ params }: Props) {
+export default function ServicePage({ params }: Props) {
   return (
     <main className="p-8">
       <ServiceClient id={params.id} />
