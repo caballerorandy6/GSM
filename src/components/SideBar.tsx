@@ -16,7 +16,7 @@ export default function SideBar() {
           width={1000}
           height={1000}
           alt="GSM AC Logo"
-          src="/logo2.webp"
+          src="/logo.webp"
           className="h-68 w-auto mb-10 object-contain cursor-pointer"
         />
       </Link>
