@@ -15,7 +15,7 @@ const componentMap: Record<string, React.ComponentType> = {
   "air-conditioning-installation": AirConditioningInstallation,
   "air-conditioning-repair": AirConditioningRepair,
   "air-duct-sanitizing": AirDuctSanitizing,
-  "attic-insullation": AtticInsullation,
+  "attic-insulation": AtticInsullation,
   "heating-installation": HeatingInstallation,
   "heating-repair": HeatingRepair,
 };
