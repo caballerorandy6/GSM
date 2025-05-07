@@ -12,11 +12,11 @@ export default function ServicesLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="flex">
-      <div className="hidden md:block fixed left-0 h-screen w-64">
+    <section className="sm:flex">
+      <div className="hidden sm:block fixed left-0 h-screen w-64">
         <SideBar />
       </div>
-      <div className="flex-1 ml-64">{children}</div>
+      <div className="flex-1 sm:ml-64 mx-auto">{children}</div>
     </section>
   );
 }

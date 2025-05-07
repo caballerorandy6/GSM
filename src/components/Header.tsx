@@ -83,11 +83,12 @@ const Header = () => {
             <Link href="/#" className="-m-1.5 p-1.5">
               <span className="sr-only">GSM AC</span>
               <Image
+                alt="GSM AC Logo"
                 width={1000}
                 height={1000}
-                alt="GSM AC Logo"
                 src="/logo.webp"
-                className="h-16 w-auto"
+                className="h-20 w-auto"
+                priority
               />
             </Link>
             <button

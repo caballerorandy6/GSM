@@ -8,12 +8,17 @@ import AirDuctSanitizing from "@/components/air-duct-sanitizing";
 import AtticInsullation from "@/components/attic-insullation";
 import Footer from "@/components/Footer";
 import { servicesIntro } from "@/libs/data";
+import ServiceMenu from "@/components/ServiceMenu";
 
 const AllServicesPage = () => {
   return (
     <section id="services" className="min-h-screen py-24 sm:py-32">
       <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:max-w-7xl">
+        <div className="pb-24 sm:pb-0">
+          <ServiceMenu />
+        </div>
+
+        <div className="mx-auto max-w-2xl lg:max-w-7xl pb-24 sm:pb-32">
           <h2 className="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl text-center">
             Home Heating Repair and Installation Available to You!
           </h2>

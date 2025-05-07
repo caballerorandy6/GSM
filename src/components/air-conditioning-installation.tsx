@@ -5,7 +5,7 @@ const AirConditioningInstallation = () => {
   return (
     <section
       id="air-conditioning-installation"
-      className="overflow-hidden bg-white py-24 sm:py-32 custom-blue"
+      className="overflow-hidden bg-white pb-24 sm:pb-32 custom-blue"
     >
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
         <h2 className="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl text-center ">
