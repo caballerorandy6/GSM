@@ -13,15 +13,6 @@ import { JsonLdForBreadcrumb } from "@/components/JsonLdForBreadcrumb";
 import { JsonLdForFaq } from "@/components/JsonLdForFaq";
 import { JsonLdForProduct } from "@/components/JsonLdForProduct";
 
-export const serviceComponents = [
-  AirConditioningInstallation,
-  AirConditioningRepair,
-  HeatingInstallation,
-  HeatingRepair,
-  AirDuctSanitizing,
-  AtticInsullation,
-];
-
 // Function to generate metadata for the page
 export const metadata = genPageMetadata({
   title: "GSM A/C General & Contractor Inc - Services",
@@ -32,6 +23,15 @@ export const metadata = genPageMetadata({
 });
 
 const AllServicesPage = () => {
+  const serviceComponents = [
+    AirConditioningInstallation,
+    AirConditioningRepair,
+    HeatingInstallation,
+    HeatingRepair,
+    AirDuctSanitizing,
+    AtticInsullation,
+  ];
+
   return (
     <>
       {" "}
