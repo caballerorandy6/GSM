@@ -52,12 +52,11 @@ export default function SideBar() {
             >
               <span className="sr-only">Phone Number</span>
               <span aria-hidden="true">(281) 235-4684</span>
-              <p>Call Now!</p>
             </Link>
             <Link
               href="/#home"
               passHref
-              className="flex items-center gap-x-4 px-6 py-3 text-sm/6 font-semibold text-white transition-colors mx-auto bg-indigo-500 hover:bg-indigo-400 focus-visible:outline-indigo-400 rounded"
+              className="flex items-center justify-center gap-x-4 px-6 py-3 text-sm/6 font-semibold text-white transition-colors w-10/12 bg-indigo-500 hover:bg-indigo-400 focus-visible:outline-indigo-400 rounded mx-auto"
             >
               Back to Home
             </Link>

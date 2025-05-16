@@ -4,6 +4,7 @@ export const navigation = [
   { name: "Services", href: "#services" },
   { name: "Testimonials", href: "#testimonials" },
   { name: "Contact", href: "#contact" },
+  { name: "FAQ", href: "#faq" },
 ];
 
 export const allServices = [
@@ -240,5 +241,23 @@ export const attic_insulation = [
     name: "",
     description:
       "Customers can trust us with the cleaning and sanitizing of their air ducts. We have the products and tools to eliminate harmful particles such as dust, dirt, allergens, germs, etc. We can keep your vents pristine.",
+  },
+];
+
+export const faqs = [
+  {
+    question: "What HVAC services do you offer?",
+    answer:
+      "We offer a range of HVAC services including air conditioning installation, air conditioning repair, heating installation, heating repair, air duct sanitizing, and attic insulation.",
+  },
+  {
+    question: "How can I schedule a service?",
+    answer:
+      "You can schedule a service by contacting us through our website or calling our customer service number.",
+  },
+  {
+    question: "Do you provide emergency HVAC services?",
+    answer:
+      "Yes, we provide emergency HVAC services to ensure your comfort and safety at all times.",
   },
 ];

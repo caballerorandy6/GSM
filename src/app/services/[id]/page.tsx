@@ -13,6 +13,8 @@ import { JsonLdForArticle } from "@/components/JsonLdForArticle";
 import { JsonLdForBreadcrumb } from "@/components/JsonLdForBreadcrumb";
 import { JsonLdForFaq } from "@/components/JsonLdForFaq";
 import { JsonLdForProduct } from "@/components/JsonLdForProduct";
+import Footer from "@/components/Footer";
+import FAQ from "@/components/FAQ";
 
 // Mapping service IDs to their respective components
 const componentMap: Record<string, React.ComponentType> = {
@@ -64,11 +66,30 @@ export default async function ServicePage({ params }: Props) {
     return null;
   }
 
+  const faqs = [
+    {
+      question: `What is ${service.name}?`,
+      answer: `Learn more about our ${service.name} services at GSM A/C General & Contractor Inc.`,
+    },
+    {
+      question: "How can I schedule a service?",
+      answer:
+        "You can schedule a service by contacting us through our website or calling our customer service number.",
+    },
+    {
+      question: "Do you provide emergency HVAC services?",
+      answer:
+        "Yes, we provide emergency HVAC services to ensure your comfort and safety at all times.",
+    },
+  ];
+
   const ServiceComponent = componentMap[service.id];
   if (!ServiceComponent) notFound();
   return (
     <main className="p-8">
       <ServiceComponent />
+      <FAQ faqs={faqs} />
+      <Footer />
       <JsonLdForArticle
         url={`https://www.gsmactx.com/services/${service.id}`}
         headline={`About Our ${service.name} Services`}

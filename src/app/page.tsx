@@ -9,6 +9,9 @@ import { JsonLdForArticle } from "@/components/JsonLdForArticle";
 import { JsonLdForBreadcrumb } from "@/components/JsonLdForBreadcrumb";
 import { JsonLdForFaq } from "@/components/JsonLdForFaq";
 import { JsonLdForProduct } from "@/components/JsonLdForProduct";
+import FAQ from "@/components/FAQ";
+import { faqs } from "@/libs/data";
+import Footer from "@/components/Footer";
 
 export const metadata = genPageMetadata({
   title: "GSM A/C General & Contractor Inc, the best HVAC company in Texas",
@@ -27,7 +30,10 @@ export default function Home() {
       <Services />
       <Testimonials />
       <Contact />
+      <FAQ faqs={faqs} />
+      <Footer />
 
+      {/* JSON-LD Markup */}
       <JsonLdForArticle
         url="https://www.gsmactx.com"
         headline="About Our HVAC Repair & Installation Company"

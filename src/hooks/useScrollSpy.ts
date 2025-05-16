@@ -6,6 +6,7 @@ const sectionTitles: Record<string, string> = {
   services: "GSM AC | Services",
   testimonials: "GSM AC | Testimonials",
   contact: "GSM AC | Contact",
+  faq: "GSM AC | FAQ",
 };
 
 export function useScrollSpy(sectionIds: string[]) {

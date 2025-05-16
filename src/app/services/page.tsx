@@ -7,11 +7,13 @@ import AtticInsullation from "@/components/attic-insullation";
 import Footer from "@/components/Footer";
 import { servicesIntro } from "@/libs/data";
 import ServiceMenu from "@/components/ServiceMenu";
+import FAQ from "@/components/FAQ";
 import { genPageMetadata } from "@/seo/genPageMetadata";
 import { JsonLdForArticle } from "@/components/JsonLdForArticle";
 import { JsonLdForBreadcrumb } from "@/components/JsonLdForBreadcrumb";
 import { JsonLdForFaq } from "@/components/JsonLdForFaq";
 import { JsonLdForProduct } from "@/components/JsonLdForProduct";
+import { faqs } from "@/libs/data";
 
 // Function to generate metadata for the page
 export const metadata = genPageMetadata({
@@ -22,16 +24,16 @@ export const metadata = genPageMetadata({
   ogImg: "/worker6.webp",
 });
 
-const AllServicesPage = () => {
-  const serviceComponents = [
-    AirConditioningInstallation,
-    AirConditioningRepair,
-    HeatingInstallation,
-    HeatingRepair,
-    AirDuctSanitizing,
-    AtticInsullation,
-  ];
+const serviceComponents = [
+  AirConditioningInstallation,
+  AirConditioningRepair,
+  HeatingInstallation,
+  HeatingRepair,
+  AirDuctSanitizing,
+  AtticInsullation,
+];
 
+const AllServicesPage = () => {
   return (
     <>
       {" "}
@@ -41,7 +43,7 @@ const AllServicesPage = () => {
             <ServiceMenu />
           </div>
 
-          <div className="mx-auto max-w-2xl lg:max-w-7xl pb-24 sm:pb-32">
+          <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8 pb-24 sm:pb-32">
             <h2
               id="services-title"
               className="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl text-center"
@@ -49,7 +51,7 @@ const AllServicesPage = () => {
               Home Heating Repair and Installation Available to You!
             </h2>
 
-            <div className="mt-10 max-w-xl space-y-8 text-base/7 lg:max-w-none">
+            <div className="mt-10 space-y-8 text-base/7">
               {servicesIntro.map((item, index) => (
                 <article key={index} className="relative flex flex-col">
                   <h3 className="text-2xl font-semibold tracking-tight text-pretty text-white">
@@ -67,9 +69,12 @@ const AllServicesPage = () => {
             <Component key={index} />
           ))}
 
+          <FAQ faqs={faqs} />
+
           <Footer />
         </div>
       </section>
+      {/* // JSON-LD structured data */}
       <JsonLdForArticle
         url="https://www.gsmactx.com/services"
         headline="Home Heating Repair and Installation Available to You!"
