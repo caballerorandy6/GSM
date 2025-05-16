@@ -3,11 +3,11 @@ import { Metadata } from "next";
 import { allServices } from "@/libs/data";
 
 // Importing all service components
-import AirConditioningInstallation from "@/components/air-conditioning-installation";
-import AirConditioningRepair from "@/components/air-conditioning-repair";
-import AirDuctSanitizing from "@/components/air-duct-sanitizing";
-import AtticInsullation from "@/components/attic-insullation";
-import HeatingInstallation from "@/components/heating-installation";
+import AirConditioningInstallation from "@/components/AirConditioningInstallation";
+import AirConditioningRepair from "@/components/AirConditioningRepair";
+import AirDuctSanitizing from "@/components/AirDuctSanitizing";
+import AtticInsullation from "@/components/AtticInsullation";
+import HeatingInstallation from "@/components/HeatingInstallation";
 import HeatingRepair from "@/components/HeatingRepair";
 import { JsonLdForArticle } from "@/components/JsonLdForArticle";
 import { JsonLdForBreadcrumb } from "@/components/JsonLdForBreadcrumb";

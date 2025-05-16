@@ -51,7 +51,7 @@ export default function SideBar() {
               className="flex items-center gap-x-4 px-6 py-3 text-sm/6 font-semibold text-gray-400 hover:text-indigo-300 transition-colors"
             >
               <span className="sr-only">Phone Number</span>
-              <span aria-hidden="true">(281) 235-4684</span>
+              <span aria-hidden="true">+1 (281) 235-4684</span>
             </Link>
             <Link
               href="/#home"

@@ -2,11 +2,11 @@ import { notFound } from "next/navigation";
 import { allServices } from "@/libs/data";
 
 // Importing all service components
-import AirConditioningInstallation from "./air-conditioning-installation";
-import AirConditioningRepair from "./air-conditioning-repair";
-import AirDuctSanitizing from "./air-duct-sanitizing";
-import AtticInsullation from "./attic-insullation";
-import HeatingInstallation from "./heating-installation";
+import AirConditioningInstallation from "./AirConditioningInstallation";
+import AirConditioningRepair from "./AirConditioningRepair";
+import AirDuctSanitizing from "./AirDuctSanitizing";
+import AtticInsullation from "./AtticInsullation";
+import HeatingInstallation from "./HeatingInstallation";
 import HeatingRepair from "./HeatingRepair";
 
 // Mapping service IDs to their respective components

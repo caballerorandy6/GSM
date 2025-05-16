@@ -1,11 +1,10 @@
-import AirConditioningInstallation from "@/components/air-conditioning-installation";
-import AirConditioningRepair from "@/components/air-conditioning-repair";
-import HeatingInstallation from "@/components/heating-installation";
+import AirConditioningInstallation from "@/components/AirConditioningInstallation";
+import AirConditioningRepair from "@/components/AirConditioningRepair";
+import HeatingInstallation from "@/components/HeatingInstallation";
 import HeatingRepair from "@/components/HeatingRepair";
-import AirDuctSanitizing from "@/components/air-duct-sanitizing";
-import AtticInsullation from "@/components/attic-insullation";
+import AirDuctSanitizing from "@/components/AirDuctSanitizing";
+import AtticInsullation from "@/components/AtticInsullation";
 import Footer from "@/components/Footer";
-import { servicesIntro } from "@/libs/data";
 import ServiceMenu from "@/components/ServiceMenu";
 import FAQ from "@/components/FAQ";
 import { genPageMetadata } from "@/seo/genPageMetadata";
@@ -14,6 +13,7 @@ import { JsonLdForBreadcrumb } from "@/components/JsonLdForBreadcrumb";
 import { JsonLdForFaq } from "@/components/JsonLdForFaq";
 import { JsonLdForProduct } from "@/components/JsonLdForProduct";
 import { faqs } from "@/libs/data";
+import { servicesIntro } from "@/libs/data";
 
 // Function to generate metadata for the page
 export const metadata = genPageMetadata({
@@ -24,16 +24,15 @@ export const metadata = genPageMetadata({
   ogImg: "/worker6.webp",
 });
 
-const serviceComponents = [
-  AirConditioningInstallation,
-  AirConditioningRepair,
-  HeatingInstallation,
-  HeatingRepair,
-  AirDuctSanitizing,
-  AtticInsullation,
-];
-
 const AllServicesPage = () => {
+  const serviceComponents: React.ComponentType[] = [
+    AirConditioningInstallation,
+    AirConditioningRepair,
+    HeatingInstallation,
+    HeatingRepair,
+    AirDuctSanitizing,
+    AtticInsullation,
+  ];
   return (
     <>
       {" "}
@@ -43,7 +42,7 @@ const AllServicesPage = () => {
             <ServiceMenu />
           </div>
 
-          <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8 pb-24 sm:pb-32">
+          <div className="mx-auto w-full px-6 lg:px-8 pb-24 sm:pb-32">
             <h2
               id="services-title"
               className="text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl text-center"
@@ -51,13 +50,13 @@ const AllServicesPage = () => {
               Home Heating Repair and Installation Available to You!
             </h2>
 
-            <div className="mt-10 space-y-8 text-base/7">
+            <div className="mt-10 space-y-8 text-base/7 flex flex-col ">
               {servicesIntro.map((item, index) => (
-                <article key={index} className="relative flex flex-col">
-                  <h3 className="text-2xl font-semibold tracking-tight text-pretty text-white">
+                <article key={index} className="flex flex-col w-full">
+                  <h3 className="text-2xl font-semibold tracking-tight text-pretty text-white mx-auto">
                     {item.name}
                   </h3>
-                  <p className="mt-6 text-base/7 text-gray-300">
+                  <p className="mt-6 text-base/7 text-gray-300 mx-auto">
                     {item.description}
                   </p>
                 </article>
