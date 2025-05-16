@@ -52,9 +52,12 @@ const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className={clsx("text-sm/6 font-semibold transition-colors", {
-                  "text-indigo-300": activeSection === item.name,
-                })}
+                className={clsx(
+                  "text-sm/6 font-semibold transition-colors hover:text-indigo-300",
+                  {
+                    "text-indigo-300": activeSection === item.name,
+                  }
+                )}
               >
                 {item.name}
               </Link>
@@ -107,9 +110,12 @@ const Header = () => {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={clsx("font-semibold transition-colors", {
-                      "text-indigo-300": activeSection === item.name,
-                    })}
+                    className={clsx(
+                      "font-semibold transition-colors hover:text-indigo-300",
+                      {
+                        "text-indigo-300": activeSection === item.name,
+                      }
+                    )}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -120,9 +126,9 @@ const Header = () => {
                 <Link
                   href="tel:+12812354684"
                   passHref
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-gray-800"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-sm/10 font-semibold text-white hover:text-indigo-300 transition-colors"
                 >
-                  Call Us
+                  <span className="hover">Call Now!</span>
                 </Link>
               </div>
             </div>
