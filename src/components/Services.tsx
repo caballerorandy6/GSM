@@ -1,3 +1,5 @@
+"use client";
+
 import { services } from "@/libs/data";
 import ServiceCard from "@/components/ServiceCard";
 import useSectionObserver from "@/hooks/useSectionObserver";

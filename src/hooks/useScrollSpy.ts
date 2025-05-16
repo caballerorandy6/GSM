@@ -1,6 +1,12 @@
-"use client";
-
 import { useEffect } from "react";
+
+const sectionTitles: Record<string, string> = {
+  home: "GSM AC | Home",
+  about: "GSM AC | About",
+  services: "GSM AC | Services",
+  testimonials: "GSM AC | Testimonials",
+  contact: "GSM AC | Contact",
+};
 
 export function useScrollSpy(sectionIds: string[]) {
   useEffect(() => {
@@ -10,9 +16,16 @@ export function useScrollSpy(sectionIds: string[]) {
           if (entry.isIntersecting) {
             const id = entry.target.getAttribute("id");
             if (id) {
+              // Actualiza la URL sin recargar
               history.replaceState(null, "", `#${id}`);
+
+              // Cambia dinámicamente el título
+              const newTitle = sectionTitles[id] || "GSM AC";
+              if (document.title !== newTitle) {
+                document.title = newTitle;
+              }
             }
-            break; // solo uno visible a la vez
+            break;
           }
         }
       },
@@ -22,12 +35,11 @@ export function useScrollSpy(sectionIds: string[]) {
       }
     );
 
-    sectionIds.forEach((id) => {
-      const element = document.getElementById(id);
-      if (element) {
-        observer.observe(element);
-      }
-    });
+    const elements = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    elements.forEach((el) => observer.observe(el!));
 
     return () => observer.disconnect();
   }, [sectionIds]);

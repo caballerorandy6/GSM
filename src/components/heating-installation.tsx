@@ -25,12 +25,12 @@ const HeatingInstallation = () => {
         <div className="mt-10 max-w-xl space-y-8 text-base/7 lg:max-w-none">
           {heating_installation.map((item, index) => (
             <div key={index} className="relative flex flex-col">
-              <p className="text-2xl font-semibold tracking-tight text-pretty text-white">
+              <h3 className="text-2xl font-semibold tracking-tight text-pretty text-white">
                 {item.name}
-              </p>{" "}
-              <dd className="mt-6 text-base/7 text-gray-300">
+              </h3>{" "}
+              <p className="mt-6 text-base/7 text-gray-300">
                 {item.description}
-              </dd>
+              </p>
             </div>
           ))}
         </div>

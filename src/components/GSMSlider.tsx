@@ -89,7 +89,7 @@ const GSMSlider = ({ reviews }: GSMSliderProps) => {
                     <Link
                       href="https://www.google.com/search?sca_esv=cf65d87ff3121f3e&hl=en-US&gl=us&sxsrf=AHTn8zr-1io7-Dj8PXAk5Cp_a7FTegiGPA:1745952694879&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzYwEZZXOeOVLLgundtC9z8hW84qr-SbHuzDJ1-eBJMpHFqmbFgRRPWEW7hWL6-rNCXzg6YlqEhHQYDdNGdNevSrV2VoRQIdtVASnGJ6mp4f4pRJvgWZRDmHgtIXh5qcym16gG40%3D&q=G+S+M+A/C+%26+General+Contractor+INC.+Reviews&sa=X&ved=2ahUKEwja5rDR9P2MAxV7M9AFHakvOfUQ0bkNegQIQBAE&cshid=1745952772703797&biw=1920&bih=958&dpr=1"
                       target="blank"
-                      className="mt-1 hover:text-indigo-300 transition-colors"
+                      className="mt-1 hover:text-indigo-300 text-indigo-400 transition-colors font-semibold"
                     >
                       See More...
                     </Link>

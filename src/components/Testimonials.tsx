@@ -1,3 +1,5 @@
+"use client";
+
 import GSMSlider from "./GSMSlider";
 import { Review } from "@/libs/interfaces";
 import { useRef, useEffect, useState } from "react";
