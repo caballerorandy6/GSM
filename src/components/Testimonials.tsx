@@ -83,11 +83,19 @@ const Testimonials = () => {
           ref={videoRef}
           autoPlay
           loop
-          muted
           controls
-          src="/video.webm"
+          src="/video_compressed.webm"
           className="inset-0 size-fit object-cover mt-20 saturate-200 xl:w-1/2"
-        />
+        >
+          <track
+            kind="subtitles"
+            src="/captions.vtt"
+            srcLang="en"
+            label="English"
+            default
+          />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </section>
   );

@@ -28,12 +28,12 @@ export default function Services() {
         <div className="mt-10 max-w-xl space-y-8 text-base/7 lg:max-w-none">
           {features.map((feature) => (
             <div key={feature.name} className="relative flex flex-col">
-              <p className="text-2xl font-semibold tracking-tight text-pretty text-white">
+              <h3 className="text-2xl font-semibold tracking-tight text-pretty text-white">
                 {feature.name}
-              </p>{" "}
-              <dd className="mt-6 text-base/7 text-gray-300">
+              </h3>{" "}
+              <p className="mt-6 text-base/7 text-gray-300">
                 {feature.description}
-              </dd>
+              </p>
             </div>
           ))}
         </div>

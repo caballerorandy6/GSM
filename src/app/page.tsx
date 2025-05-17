@@ -18,7 +18,7 @@ export const metadata = genPageMetadata({
   description:
     "GSM A/C General & Contractor Inc. offers professional air conditioning installation, air conditioning repair, heating installation, heating repair, air duct sanitizing and attic insulation services in Texas. Trusted HVAC experts delivering efficient, reliable, and affordable climate solutions for homes and businesses.",
   pageRoute: "/",
-  ogImg: "/logo.webp",
+  ogImg: "/logo.avif",
 });
 
 export default function Home() {
@@ -38,7 +38,7 @@ export default function Home() {
         url="https://www.gsmactx.com"
         headline="About Our HVAC Repair & Installation Company"
         description="Explaining the services we offer and our commitment to quality."
-        image="/worker.webp"
+        image="/worker.avif"
         datePublished="2025-05-16"
         dateModified="2025-05-16"
         author={{
@@ -79,7 +79,7 @@ export default function Home() {
       <JsonLdForProduct
         name="GSM A/C General & Contractor Inc"
         description="Professional HVAC solutions including air conditioning installation and repair, heating services, attic insulation, and air duct sanitizing in Texas."
-        image="/logo.webp"
+        image="/logo.avif"
         // brand="GSM A/C General & Contractor Inc"
         // sku="GSM-AC-001"
         // offers={{

@@ -26,17 +26,17 @@ export default function Hero() {
       <Header />
       <div className="relative isolate overflow-hidden pt-14">
         <Image
-          priority
-          width={1000}
-          height={1000}
+          src="/home.avif"
           alt="GSM AC Background"
-          src="/home.webp"
-          className="absolute inset-0 -z-10 size-full object-cover object-center"
+          priority
+          quality={90}
+          width={1920}
+          height={1080}
+          sizes="100vw"
+          className="absolute inset-0 -z-10 w-full h-full object-cover"
         />
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-        >
+
+        <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
           <div
             style={{
               clipPath:
@@ -55,8 +55,8 @@ export default function Hero() {
                   target="_blank"
                   className="font-semibold text-white"
                 >
-                  <span aria-hidden="true" className="absolute inset-0" />
-                  Apply now! <span aria-hidden="true">&rarr;</span>
+                  <span className="absolute inset-0" />
+                  Apply now! <span>&rarr;</span>
                 </Link>
               </div>
             </div>
@@ -83,16 +83,13 @@ export default function Hero() {
                   href="/#about"
                   className="text-sm/6 font-semibold text-white"
                 >
-                  Learn more <span aria-hidden="true">→</span>
+                  Learn more <span>→</span>
                 </Link>
               </div>
             </div>
           </div>
         </div>
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-        >
+        <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
           <div
             style={{
               clipPath:

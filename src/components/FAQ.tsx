@@ -27,36 +27,30 @@ export default function FAQ({ faqs }: FAQProps) {
           <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
             Frequently asked questions
           </h2>
-          <dl className="mt-16 divide-y divide-white/10">
+          <div className="mt-16 divide-y divide-white/10">
             {faqs.map((faq) => (
               <Disclosure
                 key={faq.question}
                 as="div"
                 className="py-6 first:pt-0 last:pb-0"
               >
-                <dt>
+                <div>
                   <DisclosureButton className="group flex w-full items-start justify-between text-left text-white">
                     <span className="text-base/7 font-semibold">
                       {faq.question}
                     </span>
                     <span className="ml-6 flex h-7 items-center">
-                      <PlusIcon
-                        aria-hidden="true"
-                        className="size-6 group-data-open:hidden"
-                      />
-                      <MinusIcon
-                        aria-hidden="true"
-                        className="size-6 group-not-data-open:hidden"
-                      />
+                      <PlusIcon className="size-6 group-data-open:hidden" />
+                      <MinusIcon className="size-6 group-not-data-open:hidden" />
                     </span>
                   </DisclosureButton>
-                </dt>
+                </div>
                 <DisclosurePanel as="dd" className="mt-2 pr-12">
                   <p className="text-base/7 text-gray-300">{faq.answer}</p>
                 </DisclosurePanel>
               </Disclosure>
             ))}
-          </dl>
+          </div>
         </div>
       </div>
     </section>

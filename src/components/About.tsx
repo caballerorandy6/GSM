@@ -63,7 +63,7 @@ const About = () => {
                     width={560}
                     height={560}
                     alt="GSM AC Personal"
-                    src="/worker.webp"
+                    src="/worker.avif"
                     className="block size-full object-cover"
                     priority={false}
                   />
@@ -76,7 +76,7 @@ const About = () => {
                     width={560}
                     height={560}
                     alt="GSM AC Personal"
-                    src="/worker2.webp"
+                    src="/worker2.avif"
                     className="block size-full object-cover"
                     priority={false}
                   />
@@ -89,7 +89,7 @@ const About = () => {
                     width={560}
                     height={560}
                     alt="GSM AC Personal"
-                    src="/worker4.webp"
+                    src="/worker4.avif"
                     className="block size-full object-cover"
                     priority={false}
                   />
@@ -102,7 +102,7 @@ const About = () => {
                     width={560}
                     height={560}
                     alt="GSM AC Personal"
-                    src="/worker6.webp"
+                    src="/worker6.avif"
                     className="block size-full object-cover rounded-2xl shadow-[0_8px_24px_rgba(10,15,26,0.6)]"
                     priority={false}
                   />

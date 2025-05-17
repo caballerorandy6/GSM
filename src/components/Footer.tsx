@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { navigation } from "@/libs/data";
 import Facebook from "./icons/Facebook";
 import Google from "./icons/Google";
@@ -22,10 +23,41 @@ const social: Social[] = [
   },
 ];
 
+const images = [
+  {
+    src: "/certified.avif",
+    alt: "Certified",
+    id: "certified",
+  },
+  {
+    src: "/customer.avif",
+    alt: "Customer Satisfaction",
+    id: "customer",
+  },
+  {
+    src: "/discount.avif",
+    alt: "Discount for Seniors and Military",
+    id: "discount",
+  },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+        <div className="flex justify-center items-center mb-10">
+          {images.map((image) => (
+            <Image
+              key={image.id}
+              width={100}
+              height={100}
+              src={image.src}
+              alt={image.alt}
+              priority={false}
+              className="object-contain w-32 h-auto"
+            />
+          ))}
+        </div>
         <nav
           aria-label="Footer"
           className="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6"
@@ -48,7 +80,7 @@ export default function Footer() {
               className="text-gray-400 hover:text-gray-300"
             >
               <span className="sr-only">{item.name}</span>
-              <item.icon aria-hidden="true" className="h-6 w-6" />
+              <item.icon className="h-6 w-6" />
             </Link>
           ))}
         </div>

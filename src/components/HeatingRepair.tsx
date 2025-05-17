@@ -6,7 +6,7 @@ const HeatingRepair = () => {
     <ServiceDetails
       id="heating-repair"
       title="Heating Repair Company That You Can Trust!"
-      imageSrc="/service4.webp"
+      imageSrc="/service4.avif"
       array={heating_repair}
     />
   );

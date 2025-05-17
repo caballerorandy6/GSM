@@ -21,12 +21,11 @@ const ServiceMenu = () => {
       >
         <div className="flex lg:flex-1">
           <Link href="/#home" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
             <Image
               alt="GSM AC Logo"
               width={1000}
               height={1000}
-              src="/logo.webp"
+              src="/logo.avif"
               className="h-20 w-auto"
               priority
             />

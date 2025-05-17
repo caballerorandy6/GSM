@@ -44,10 +44,7 @@ export default function Contact() {
         <div className="relative px-6 pt-24 pb-20 sm:pt-32 lg:static lg:px-8 lg:py-48">
           <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
             <div className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden ring-1 ring-white/5 lg:w-1/2">
-              <svg
-                aria-hidden="true"
-                className="absolute inset-0 size-full [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-gray-700"
-              >
+              <svg className="absolute inset-0 size-full [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-gray-700">
                 <defs>
                   <pattern
                     x="100%"
@@ -74,10 +71,7 @@ export default function Contact() {
                   strokeWidth={0}
                 />
               </svg>
-              <div
-                aria-hidden="true"
-                className="absolute top-[calc(100%-13rem)] -left-56 transform-gpu blur-3xl lg:top-[calc(50%-7rem)] lg:left-[max(-14rem,calc(100%-59rem))]"
-              >
+              <div className="absolute top-[calc(100%-13rem)] -left-56 transform-gpu blur-3xl lg:top-[calc(50%-7rem)] lg:left-[max(-14rem,calc(100%-59rem))]">
                 <div
                   style={{
                     clipPath:
@@ -98,56 +92,47 @@ export default function Contact() {
               also clean air ducts and insulate attics. Quality assistance is a
               phone call away!
             </p>
-            <dl className="mt-10 space-y-4 text-base/7 text-gray-300">
+            <div className="mt-10 space-y-4 text-base/7 text-gray-300">
               <div className="flex gap-x-4">
-                <dt className="flex-none">
+                <div className="flex-none">
                   <span className="sr-only">Address</span>
-                  <BuildingOffice2Icon
-                    aria-hidden="true"
-                    className="h-7 w-6 text-gray-400"
-                  />
-                </dt>
-                <dd>
+                  <BuildingOffice2Icon className="h-7 w-6 text-gray-400" />
+                </div>
+                <div>
                   G S M A/C & General Contractor INC.
                   <br />
                   Cypress, TX 77433
-                </dd>
+                </div>
               </div>
               <div className="flex gap-x-4">
-                <dt className="flex-none">
+                <div className="flex-none">
                   <span className="sr-only">Telephone</span>
-                  <PhoneIcon
-                    aria-hidden="true"
-                    className="h-7 w-6 text-gray-400"
-                  />
-                </dt>
-                <dd>
+                  <PhoneIcon className="h-7 w-6 text-gray-400" />
+                </div>
+                <div>
                   <Link
                     href="tel:+1 (281) 235-4684"
                     className="hover:text-white"
                   >
                     +1 (281) 235-4684
                   </Link>
-                </dd>
+                </div>
               </div>
               <div className="flex gap-x-4">
-                <dt className="flex-none">
+                <div className="flex-none">
                   <span className="sr-only">Email</span>
-                  <EnvelopeIcon
-                    aria-hidden="true"
-                    className="h-7 w-6 text-gray-400"
-                  />
-                </dt>
-                <dd>
+                  <EnvelopeIcon className="h-7 w-6 text-gray-400" />
+                </div>
+                <div>
                   <Link
                     href="mailto:contactus@gsmactx.com"
                     className="hover:text-white"
                   >
                     contactus@gsmactx.com
                   </Link>
-                </dd>
+                </div>
               </div>
-            </dl>
+            </div>
           </div>
         </div>
         <form
@@ -158,7 +143,7 @@ export default function Contact() {
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div>
                 <label
-                  htmlFor="first-name"
+                  htmlFor="firstName"
                   className="block text-sm/6 font-semibold text-white"
                 >
                   First name
@@ -183,7 +168,7 @@ export default function Contact() {
               </div>
               <div>
                 <label
-                  htmlFor="last-name"
+                  htmlFor="lastName"
                   className="block text-sm/6 font-semibold text-white"
                 >
                   Last name
@@ -233,7 +218,7 @@ export default function Contact() {
               </div>
               <div className="sm:col-span-2">
                 <label
-                  htmlFor="phone-number"
+                  htmlFor="phone"
                   className="block text-sm/6 font-semibold text-white"
                 >
                   Phone number

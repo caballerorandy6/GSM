@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${name} - GSM A/C General & Contractor Inc`,
       description: `Learn more about our ${name} services at GSM A/C General & Contractor Inc.`,
       images: [
-        `/service1.webp, /service2.webp, /service2.webp, /service4.webp, /service5.webp, /service6.webp`,
+        `/service1.avif, /service2.avif, /service2.avif, /service4.avif, /service5.avif, /service6.avif`,
       ], // Assuming you have images for each service
     },
   };
@@ -94,7 +94,7 @@ export default async function ServicePage({ params }: Props) {
         url={`https://www.gsmactx.com/services/${service.id}`}
         headline={`About Our ${service.name} Services`}
         description={`Learn more about our ${service.name} services at GSM A/C General & Contractor Inc.`}
-        image={`/logo.webp`}
+        image={`/logo.avif`}
         datePublished="2025-05-16"
         dateModified="2025-05-16"
         author={{
@@ -142,7 +142,7 @@ export default async function ServicePage({ params }: Props) {
       <JsonLdForProduct
         name="GSM A/C General & Contractor Inc"
         description={`Professional HVAC solutions including ${service.name} in Texas.`}
-        image="/logo.webp"
+        image="/logo.avif`}"
         // brand="GSM A/C General & Contractor Inc"
         // sku={service.id}
         // offers={{

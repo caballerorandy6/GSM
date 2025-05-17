@@ -33,14 +33,11 @@ const GSMSlider = ({ reviews }: GSMSliderProps) => {
                 width={1000}
                 height={1000}
                 alt="GSM AC Background"
-                src="/main.webp"
+                src="/home.avif"
                 className="absolute inset-0 size-full object-cover brightness-150 saturate-0 sepia-100"
               />
               <div className="absolute inset-0 bg-gray-900/10 mix-blend-multiply" />
-              <div
-                aria-hidden="true"
-                className="absolute -top-56 -left-80 transform-gpu blur-3xl"
-              >
+              <div className="absolute -top-56 -left-80 transform-gpu blur-3xl">
                 <div
                   style={{
                     clipPath:
@@ -49,10 +46,7 @@ const GSMSlider = ({ reviews }: GSMSliderProps) => {
                   className="aspect-1097/845 w-[68.5625rem] bg-linear-to-r from-[#ff4694] to-[#776fff] opacity-[0.45]"
                 />
               </div>
-              <div
-                aria-hidden="true"
-                className="hidden md:absolute md:bottom-16 md:left-[50rem] md:block md:transform-gpu md:blur-3xl"
-              >
+              <div className="hidden md:absolute md:bottom-16 md:left-[50rem] md:block md:transform-gpu md:blur-3xl">
                 <div
                   style={{
                     clipPath:
@@ -72,7 +66,6 @@ const GSMSlider = ({ reviews }: GSMSliderProps) => {
                         className={`h-5 w-5 ${
                           index < review.rating ? "gold" : "text-gray-300"
                         }`}
-                        aria-hidden="true"
                       />
                     ))}
                   </div>
