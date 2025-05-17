@@ -12,7 +12,7 @@ export default function useSectionObserver({
   const { setActiveSection } = useGSMStore();
 
   const { ref, inView } = useInView({
-    threshold: 0.4,
+    threshold: 0.2,
   });
 
   useEffect(() => {

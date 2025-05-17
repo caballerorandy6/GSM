@@ -36,7 +36,7 @@ const AllServicesPage = () => {
   return (
     <>
       {" "}
-      <section id="services" className="min-h-screen py-24 sm:py-32">
+      <section id="all-services" className="min-h-screen py-24 sm:py-32">
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="pb-24 sm:pb-0">
             <ServiceMenu />

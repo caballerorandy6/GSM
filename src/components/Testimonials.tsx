@@ -82,6 +82,7 @@ const Testimonials = () => {
         <video
           ref={videoRef}
           autoPlay
+          muted
           loop
           controls
           src="/video_compressed.webm"
