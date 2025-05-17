@@ -85,7 +85,10 @@ export default function Footer() {
           ))}
         </div>
         <p className="mt-10 text-center mx-auto text-sm/6 text-gray-400">
-          &copy; 2024 Your Company, Inc. All rights reserved.
+          {`© ${new Date().getFullYear()} GSM A/C & General Contractor INC. All rights reserved.`}
+        </p>
+        <p className="mt-4 text-center mx-auto text-sm/6 text-gray-400">
+          Developed by RC WEB
         </p>
       </div>
     </footer>

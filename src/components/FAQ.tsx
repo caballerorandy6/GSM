@@ -25,7 +25,7 @@ export default function FAQ({ faqs }: FAQProps) {
       <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-            Frequently asked questions
+            Frequently Asked Questions
           </h2>
           <div className="mt-16 divide-y divide-white/10">
             {faqs.map((faq) => (
