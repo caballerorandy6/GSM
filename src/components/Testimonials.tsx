@@ -55,7 +55,7 @@ const Testimonials = () => {
       </p>
 
       <GSMSlider reviews={testimonials} />
-      <div className="flex flex-col xl:flex-row justify-between gap-8 items-center rounded-r-4xl">
+      <div className="flex flex-col xl:flex-row justify-between gap-8 items-center rounded-r-4xl mt-20">
         <div className="xl:w-1/2">
           <h2 className="text-2xl font-semibold tracking-tight text-pretty text-white">
             Committed to Excellence: Our Clients&apos; Satisfaction Speaks for
